@@ -1,9 +1,7 @@
 <?php
 use watrlabs\router\routing;
-use Jenssegers\Blade\Blade;
 
 global $router;
-global $blade;
 
 require_once '../init.php';
 
