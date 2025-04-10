@@ -9,7 +9,7 @@ require_once '../init.php';
 
 $router = new routing();
 
-$router->addrouter('webhandler');
+$router->addrouter('template');
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $method = $_SERVER['REQUEST_METHOD'];
