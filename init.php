@@ -3,6 +3,7 @@ use Pixie\Connection;
 use Pixie\QueryBuilder\QueryBuilderHandler;
 global $dotenv;
 global $db;
+global $twig;
 
 spl_autoload_register(function ($class_name) {
     $directory = '../classes/';
@@ -15,6 +16,11 @@ spl_autoload_register(function ($class_name) {
         throw new ErrorException("Failed to include class $class_name");
     }
 });
+
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+});
+
 
 require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -38,3 +44,13 @@ try {
 } catch (PDOException $e){
     die("Failed to connect to the database.");
 }
+
+$loader = new \Twig\Loader\FilesystemLoader('../views');
+$twig = new \Twig\Environment($loader, [
+    'cache' => '../storage/cache',
+    'auto_reload' => true
+]);
+$twig->addFunction(new \Twig\TwigFunction('env', function ($key) {
+    return $_ENV[$key];
+}));
+

@@ -1,0 +1,16 @@
+{% block navbar %}
+<div id="navbar">
+    <div class="nav-group">
+        <a href="/" class="nav-item">{{ env('APP_NAME') }}</a>
+        <a href="/home" class="nav-item">home</a>
+    </div>
+    <div class="nav-group">
+        <a href="/auth/sign-up" class="nav-item">Sign Up</a>
+        <a href="/auth/login" class="nav-item">Login</a>
+    </div>
+</div>
+<div id="site-warning">
+    <p>This site is incomplete!</p>
+</div>
+
+{% endblock %}

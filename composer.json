@@ -1,6 +1,23 @@
 {
     "require": {
+        "php": ">=7.4",
+        "ext-dom": "*",
+        "ext-mbstring": "*",
+        "ext-soap": "*",
+        "wsdltophp/packagebase": "~5.0",
         "vlucas/phpdotenv": "^5.6",
-        "usmanhalalit/pixie": "^2.0"
+        "aws/aws-sdk-php": "^3.356",
+        "usmanhalalit/pixie": "^2.0",
+        "phpmailer/phpmailer": "^6.10",
+        "cocur/slugify": "^4.6",
+        "nesbot/carbon": "^3.10",
+        "benhall14/php-pagination": "^1.2",
+        "robmorgan/phinx": "^0.16.10",
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "./src/"
+        }
     }
 }

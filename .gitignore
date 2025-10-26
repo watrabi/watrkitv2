@@ -1,0 +1,8 @@
+public/.well-known
+.env
+public/.user.ini
+vendor
+storage/cache/*
+phinx.php
+storage/errorlog.log
+.github/workflows/php.yml

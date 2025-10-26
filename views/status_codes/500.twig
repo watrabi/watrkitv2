@@ -1,0 +1,23 @@
+{% extends "models/base.twig" %}
+{% block pageName %}An error occured{% endblock %}
+{% block body %}
+<div class="div-center center">
+    <div class="item-group">
+        <div class="item-container">
+            <div style="display: flex;  flex-direction: column;">
+                <h1 style="margin-bottom: 0.25rem;">500 - Server Error</h1>
+                <p>A issue occured on our side! Try again later.</p>
+                <br>
+                <div>
+                    <a id="error-button" class="button" href="#" onclick="history.back();return false;">Go back</a>
+                    <a id="error-button" class="button" href="/">Go home</a>
+                </div>
+            </div>
+            </div>
+            <div id="error_emoji">
+                <img src="/assets/images/blobs/blobpanic.png" alt="Screaming Face Emoji" title="Screaming Face Emoji" height="179.33" style="margin-left: 20px">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
